@@ -19,7 +19,6 @@ for i in p:
     # Вычислить качество на всех разбиениях
     grade = cross_val_score(estimator=model, X=data['data'], y=data['target'],
                             cv=kf, scoring='neg_mean_squared_error')
-
     file.write(str(i) + ': ' + str(round(grade.mean(), 1)) + '\n')
 
 file.close()
